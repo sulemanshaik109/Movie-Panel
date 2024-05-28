@@ -1,0 +1,23 @@
+.cast-data {
+  display: flex;
+  flex-direction: column;
+  margin-right: 15px;
+}
+
+.profile {
+  width: 180px;
+  height: 270px;
+}
+
+.name {
+  color: #fffffff8;
+  font-size: 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.character {
+  color: #fffffff8;
+  font-size: 15px;
+  margin-top: 5px;
+}

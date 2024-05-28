@@ -48,7 +48,13 @@ class MovieDetails extends Component {
     const apiUrl = `https://api.themoviedb.org/3/movie/${id}/credits?api_key=c45a857c193f6302f2b5061c3b85e743&language=en-US`;
     const response = await fetch(apiUrl);
     const fetchedData = await response.json();
-    this.setState({ cast: fetchedData.cast });
+    const updatedData = fetchedData.cast.map((eachData) => ({
+      id: eachData.id,
+      profile: eachData.profile_path,
+      name: eachData.name,
+      character: eachData.character,
+    }));
+    this.setState({ cast: updatedData });
   };
 
   render() {
@@ -63,7 +69,6 @@ class MovieDetails extends Component {
       bannerUrl,
       posterUrl,
     } = movieData;
-    console.log(cast);
     return (
       <>
         <Header />
