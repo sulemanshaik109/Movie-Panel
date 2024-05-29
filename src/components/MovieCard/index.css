@@ -1,10 +1,11 @@
 .movie-item {
   list-style-type: none;
-  margin-bottom: 48px;
   width: 250px;
   flex-grow: 0;
   flex-shrink: 1;
-  margin-right: 30px;
+  margin-right: 45px;
+  margin-left: 45px;
+  margin-bottom: 45px;
 }
 
 .link-item {
@@ -38,4 +39,26 @@
   font-size: 16px;
   font-weight: 500;
   margin: 0px;
+}
+
+@media screen and (max-width: 768px) {
+  .movie-item {
+    width: 40%;
+    margin-right: 15px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+  }
+  .link-item {
+    margin-bottom: 10px;
+  }
+  .movie-poster {
+    width: 70%;
+    max-height: 150px;
+  }
+  .title {
+    font-size: 14px;
+  }
+  .rating {
+    font-size: 12px;
+  }
 }

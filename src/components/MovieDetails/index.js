@@ -84,15 +84,17 @@ class MovieDetails extends Component {
                 <div className="movie-data">
                   <h1 className="movie-title">{title}</h1>
                   <p className="movie-rating">Rating: {rating}</p>
-                  <ul className="runtime-and-genres">
-                    <li className="runtime">{runtime} min</li>
-                    {genres &&
-                      genres.map((eachGenre) => (
-                        <li className="genre" key={eachGenre.id}>
-                          {eachGenre.name},
-                        </li>
-                      ))}
-                  </ul>
+                  <div className="runtime-and-genres">
+                    <p className="runtime">{runtime} min</p>
+                    <ul className="genres-list">
+                      {genres &&
+                        genres.map((eachGenre) => (
+                          <li className="genre" key={eachGenre.id}>
+                            {eachGenre.name},
+                          </li>
+                        ))}
+                    </ul>
+                  </div>
                   <p className="release-date">Release Date : {releaseDate}</p>
                 </div>
               </div>

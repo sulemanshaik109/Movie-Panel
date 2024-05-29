@@ -21,3 +21,10 @@
   font-size: 15px;
   margin-top: 5px;
 }
+
+@media screen and (max-width: 768px) {
+  .profile {
+    width: 170px;
+    height: 250px;
+  }
+}

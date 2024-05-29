@@ -53,8 +53,6 @@
 }
 
 .runtime-and-genres {
-  list-style-type: none;
-  padding-left: 0px;
   display: flex;
   align-items: center;
   margin-bottom: 10px;
@@ -69,6 +67,15 @@
   padding: 3px;
   border-radius: 6px;
   margin-right: 8px;
+  margin-bottom: 0px;
+}
+
+.genres-list {
+  list-style-type: none;
+  padding-left: 0px;
+  display: flex;
+  align-items: center;
+  margin: 0px;
 }
 
 .genre {
@@ -127,4 +134,47 @@
   display: flex;
   overflow: auto;
   width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .banner-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .about-movie {
+    width: 100%;
+  }
+  .movie-title {
+    font-size: 18px;
+  }
+  .movie-rating {
+    font-size: 14px;
+  }
+  .runtime-and-genres {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .runtime {
+    font-size: 12px;
+  }
+  .genres-list {
+    margin-top: 10px;
+  }
+  .genre {
+    font-size: 11px;
+  }
+  .release-date {
+    font-size: 14px;
+  }
+  .overview-heading {
+    font-size: 18px;
+  }
+  .overview {
+    font-size: 13px;
+  }
+  .banner {
+    width: 100%;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 14px;
+  }
 }

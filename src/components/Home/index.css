@@ -4,13 +4,18 @@
   align-items: center;
   min-width: 100%;
   background-color: #282c34;
-  padding: 30px;
+  padding-top: 40px;
 }
 
 .movies-list {
   display: flex;
-  justify-content: space-around;
   flex-wrap: wrap;
   padding-left: 0;
-  max-width: 95%;
+  width: 90%;
+}
+
+@media screen and (max-width: 768px) {
+  .movies-container {
+    padding-top: 20px;
+  }
 }
