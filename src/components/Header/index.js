@@ -1,22 +1,19 @@
-import { Link } from "react-router-dom";
-import { FaSearch } from "react-icons/fa";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "./index.css";
 
-const Header = (props) => {
-  const { changeSearchInput, enterSearchInput, searchInput } = props;
+const Header = () => {
+  const [searchInput, setSearchInput] = useState("");
 
-  const onChangeSearchInput = (event) => {
-    changeSearchInput(event.target.value);
-  };
+  const history = useNavigate();
 
-  const onClickingEnter = (event) => {
-    if (event.key === "Enter") {
-      enterSearchInput();
+  const onSubmitSearchInput = (event) => {
+    event.preventDefault();
+    if (searchInput === "") {
+      history("/");
+    } else {
+      history(`/search-results/${searchInput}`);
     }
-  };
-
-  const onEnterSearchInput = () => {
-    enterSearchInput();
   };
 
   return (
@@ -26,22 +23,23 @@ const Header = (props) => {
           <Link to="/" className="link-logo">
             <h1 className="logo">MovieDb</h1>
           </Link>
-          <div className="mobile-search-input-container">
+          <form
+            className="mobile-search-input-container"
+            onSubmit={onSubmitSearchInput}
+          >
             <input
               type="search"
               className="mobile search-input"
               placeholder="Movie Name"
               value={searchInput}
-              onChange={onChangeSearchInput}
+              onChange={(event) => {
+                setSearchInput(event.target.value);
+              }}
             />
-            <button
-              className="mobile-btn"
-              type="button"
-              onClick={onEnterSearchInput}
-            >
-              <FaSearch color={"#ffffff"} />
+            <button className="mobile-btn" type="submit">
+              Search
             </button>
-          </div>
+          </form>
         </div>
         <ul className="nav-mobile-menu">
           <li className="nav-menu-item">
@@ -81,23 +79,23 @@ const Header = (props) => {
               Upcoming
             </Link>
           </li>
-          <li className="search-input-container">
+          <form
+            className="search-input-container"
+            onSubmit={onSubmitSearchInput}
+          >
             <input
               type="search"
               className="search-input"
               placeholder="Movie Name"
               value={searchInput}
-              onChange={onChangeSearchInput}
-              onKeyDown={onClickingEnter}
+              onChange={(event) => {
+                setSearchInput(event.target.value);
+              }}
             />
-            <button
-              className="search-btn"
-              type="button"
-              onClick={onEnterSearchInput}
-            >
+            <button className="search-btn" type="submit">
               Search
             </button>
-          </li>
+          </form>
         </ul>
       </div>
     </nav>

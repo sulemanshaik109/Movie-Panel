@@ -3,6 +3,8 @@
   justify-content: center;
   background-color: #343a3f;
   width: 100%;
+  position: fixed;
+  top: 0;
 }
 
 .mobile-nav-content {
@@ -95,7 +97,7 @@
 }
 
 .mobile {
-  width: 130px;
+  width: 110px;
   padding-left: 8px;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -105,11 +107,13 @@
 
 .mobile-btn {
   background-color: #6c757d;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 4px;
-  padding-bottom: 4px;
+  padding-left: 6px;
+  padding-right: 6px;
+  padding-top: 6px;
+  padding-bottom: 6px;
   border-radius: 5px;
+  color: #f1f5f9;
+  font-size: 12px;
 }
 
 .desktop-nav-content {

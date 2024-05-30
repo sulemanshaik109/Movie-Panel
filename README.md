@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 <h1 align="center">
 Movie App
 </h1>
+=======
+The objective of the project is to create a movie web panel using React JS. It is consists of four different pages and a global search in the Navbar.
+>>>>>>> pagination done
 
 <strong><em>Movie App</em></strong> is website built using <strong><em>React.JS</em></strong> contains information about popular, top-rated and upcoming movies. It is consists of four different pages such as <strong><em>Home/Popular page</em></strong>, <strong><em>Top-rated page</em></strong>, <strong><em>Upcoming page</em></strong> and <strong><em>Movie Details page</em></strong> and additionally it has a <strong><em>global search</em></strong> in the Navbar for searching specific movies.
 
@@ -113,15 +117,20 @@ The app must have the following functionalities:
 <summary>Colors</summary>
 <br/>
 
-Add the text and background colours to be used in the assignment yourself.
-
-<!-- <div style="background-color: #3b82f6; width: 150px; padding: 10px; color: white">Hex: #3b82f6</div> -->
+<div style="background-color: #343a3f; width: 150px; padding: 10px; color: white">Hex: #343a3f</div>
+<div style="background-color: #d2d4d2; width: 150px; padding: 10px; color: white">Hex: #d2d4d2</div>
+<div style="background-color: #838784; width: 150px; padding: 10px; color: white">Hex: #838784</div>
+<div style="background-color: #f1f5f9; width: 150px; padding: 10px; color: black">Hex: #f1f5f9</div>
+<div style="background-color: #b1b6ba; width: 150px; padding: 10px; color: black">Hex: #b1b6ba</div>
+<div style="background-color: #6c757d; width: 150px; padding: 10px; color: black">Hex: #6c757d</div>
+<div style="background-color: #282c34; width: 150px; padding: 10px; color: black">Hex: #282c34</div>
+<div style="background-color: #ffffff; width: 150px; padding: 10px; color: black">Hex: #ffffff</div>
 
 </details>
 
 <details>
 <summary>Font-families</summary>
 
-- Add the font-families to be used in the assignment yourself.
+- Roboto
 
 </details>
