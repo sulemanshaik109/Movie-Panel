@@ -1,25 +1,37 @@
-Write the objective of the assignment yourself
+<h1 align="center">
+Movie App
+</h1>
 
-### Refer to the image below:
+<strong><em>Movie App</em></strong> is website built using <strong><em>React.JS</em></strong> contains information about popular, top-rated and upcoming movies. It is consists of four different pages such as <strong><em>Home/Popular page</em></strong>, <strong><em>Top-rated page</em></strong>, <strong><em>Upcoming page</em></strong> and <strong><em>Movie Details page</em></strong> and additionally it has a <strong><em>global search</em></strong> in the Navbar for searching specific movies.
 
-Add UI reference image yourself
+## Project Walk-Through
 
+### Home/Popular Page
 <div style="text-align: center;">
-     <!-- <img src="remove this text and add the image URL" alt="ui"> -->
+     <img src="https://res.cloudinary.com/dsbxrn2tj/image/upload/v1717054866/home_cagdx2.png" alt="home-page">
 </div>
 <br/>
 
-### Design Files
-
-<details>
-<summary>Add Route Name</summary>
+### Top-rated Page
+<div style="text-align: center;">
+     <img src="https://res.cloudinary.com/dsbxrn2tj/image/upload/v1717055028/top-rated_gybybx.png" alt="home-page">
+</div>
 <br/>
-Add the design files according to the route (if any) and responsiveness
 
-<!-- - [Extra Small (Size < 576px) and Small (Size >= 576px)](remove this text and add the image URL here)
-- [Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px)](remove this text and add the image URL here) -->
+### Upcoming Page
+<div style="text-align: center;">
+     <img src="https://res.cloudinary.com/dsbxrn2tj/image/upload/v1717055207/upcoming_rutocs.png" alt="home-page">
+</div>
+<br/>
 
-</details>
+### Single Movie Details Page
+<div style="text-align: center;">
+     <img src="https://res.cloudinary.com/dsbxrn2tj/image/upload/v1717055592/movie-details_mbfrqo.png" alt="home-page">
+</div>
+<br/>
+
+#### Cast of the movie :
+<img src="https://res.cloudinary.com/dsbxrn2tj/image/upload/v1717055779/cast_tb5nsr.png" alt="home-page">
 
 ### Set Up Instructions
 
