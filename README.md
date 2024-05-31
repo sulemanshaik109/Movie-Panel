@@ -69,6 +69,7 @@ I have built this project using the following tools & techniques:
 - React Router v6
 - axios
 - JSX
+- ReactPaginator
 - Class Components
 - Functional Components
 - React Hooks
