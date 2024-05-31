@@ -1,13 +1,14 @@
 import { Component } from "react";
 
 import axios from "axios";
+import Pagination from "../../components/Pagination";
 import MovieCard from "../../components/MovieCard";
 
 class TopRated extends Component {
   state = {
     topRatedMoviesList: [],
     currentPage: 1,
-    itemsPerPage: 8,
+    totalPages: 0,
   };
 
   componentDidMount() {
@@ -15,10 +16,11 @@ class TopRated extends Component {
   }
 
   getTopRatedMovies = async () => {
+    const { currentPage } = this.state;
     const apiKey = "c45a857c193f6302f2b5061c3b85e743";
-    const apiUrl = `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&language=en-US&page=1`;
-    const response = await axios.get(apiUrl);
-    const updatedData = response.data.results.map((result) => ({
+    const apiUrl = `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&language=en-US&page=${currentPage}`;
+    const responseObject = await axios.get(apiUrl);
+    const updatedData = responseObject.data.results.map((result) => ({
       id: result.id,
       title: result.title,
       poster: result.poster_path,
@@ -26,93 +28,30 @@ class TopRated extends Component {
     }));
     this.setState({
       topRatedMoviesList: updatedData,
+      totalPages: responseObject.data.total_pages,
     });
   };
 
-  handlePageChange = (pageNumber) => {
-    this.setState({ currentPage: pageNumber });
-  };
-
-  handlePrevClick = () => {
-    this.setState((prevState) => ({
-      currentPage: prevState.currentPage > 1 ? prevState.currentPage - 1 : 1,
-    }));
-  };
-
-  handleNextClick = () => {
-    const { topRatedMoviesList, itemsPerPage } = this.state;
-    if (topRatedMoviesList) {
-      const pageCount = Math.ceil(topRatedMoviesList.length / itemsPerPage);
-      this.setState((prevState) => ({
-        currentPage:
-          prevState.currentPage !== pageCount
-            ? prevState.currentPage + 1
-            : pageCount,
-      }));
-    }
+  handelPageClick = (pageNumber) => {
+    this.setState({ currentPage: pageNumber }, this.getTopRatedMovies);
   };
 
   render() {
-    const { topRatedMoviesList, currentPage, itemsPerPage } = this.state;
-    const indexOfLastItem = currentPage * itemsPerPage;
-    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-    if (topRatedMoviesList) {
-      const currentItems = topRatedMoviesList.slice(
-        indexOfFirstItem,
-        indexOfLastItem
-      );
-      const pageCount = Math.ceil(topRatedMoviesList.length / itemsPerPage);
-
-      return (
-        <div className="movies-container">
-          <ul className="movies-list">
-            {currentItems &&
-              currentItems.map((movie) => (
-                <MovieCard movieData={movie} key={movie.id} />
-              ))}
-          </ul>
-          <ul className="pagination-container">
-            <li>
-              <button
-                className={`page-control-btn ${
-                  currentPage === 1 && "disabled-btn"
-                }`}
-                onClick={this.handlePrevClick}
-                disabled={currentPage === 1}
-              >
-                &le; Prev
-              </button>
-            </li>
-            {Array.from({ length: pageCount }, (item, index) => (
-              <li key={index}>
-                <a
-                  className={`page-number ${
-                    index + 1 === currentPage && "active"
-                  }`}
-                  onClick={() => this.handlePageChange(index + 1)}
-                  href="!#"
-                >
-                  {index + 1}
-                </a>
-              </li>
+    const { topRatedMoviesList, totalPages } = this.state;
+    return (
+      <div className="movies-container">
+        <ul className="movies-list">
+          {topRatedMoviesList &&
+            topRatedMoviesList.map((movie) => (
+              <MovieCard movieData={movie} key={movie.id} />
             ))}
-            <li>
-              <button
-                className={`page-control-btn ${
-                  currentPage === pageCount && "disabled-btn"
-                }`}
-                onClick={this.handleNextClick}
-                disabled={currentPage === pageCount}
-              >
-                Next &ge;
-              </button>
-            </li>
-          </ul>
-        </div>
-      );
-    } else {
-      return <></>;
-    }
+        </ul>
+        <Pagination
+          totalPages={totalPages}
+          handelPageClick={this.handelPageClick}
+        />
+      </div>
+    );
   }
 }
 

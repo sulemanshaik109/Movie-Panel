@@ -1,0 +1,30 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  align-self: flex-end;
+  padding-right: 120px;
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+.page-number {
+  color: #d2d4d2;
+  font-size: 18px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.active {
+  color: #0099ff;
+}
+
+.label {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin-left: 10px;
+  margin-right: 10px;
+  background: none;
+  color: #0099ff;
+  font-size: 18px;
+}
