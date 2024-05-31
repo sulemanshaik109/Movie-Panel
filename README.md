@@ -55,6 +55,25 @@ Welcome to MoviePanel, a React-based web application that provides movie enthusi
        - <strong><em>Global Search</em></strong>: Quickly search for movies from any page using the search bar in the navbar.
        - <strong><em>Search Button</em></strong>: It redirects you to the search results page and display the searched movied.
 
+### Technology Used
+
+I have built this project using the following tools & techniques:
+- React.JS
+- React Router v6
+- axios
+- JSX
+- Class Components
+- Functional Components
+- React Hooks
+- useState
+- useNavigate
+- useParams
+- useLocation
+- withRouter
+- Global Search
+- EsLint.
+- Github Actions.
+
 ### How to use
 
 - Clone the repo
