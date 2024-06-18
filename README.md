@@ -59,7 +59,7 @@ Welcome to MoviePanel, a React-based web application that provides movie enthusi
     - <strong><em>Logo</em></strong>: It redirects you to the home page whenever you click it.
     - <strong><em>Categories Links</em></strong>: When a link is clicked, it redirects you to the specific category page. For example, if you click on the top-rated link the page will redirect to top-rated page and displays the top-rated movies.
     - <strong><em>Global Search</em></strong>: Quickly search for movies from any page using the search bar in the navbar.
-    - <strong><em>Search Button</em></strong>: It redirects you to the search results page and display the searched movied.
+    - <strong><em>Search Button</em></strong>: It redirects you to the search results page and display the searched movie.
 
 ### Technology Used
 
